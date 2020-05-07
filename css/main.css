@@ -1,0 +1,14 @@
+
+body {
+  /*background: url("https://picsum.photos/seed/picsum/800/800") 50% 100% no-repeat;*/
+  background-color: lightblue;
+}
+
+.cell-size {
+	width: 8rem;
+	height: 8rem;
+}
+
+.board-width {
+	width: 35%;
+}
