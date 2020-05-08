@@ -1,5 +1,3 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable no-console */
 
 const Player = (name = '', marker = '_') => {
   let score = 0;
@@ -36,9 +34,9 @@ const GameBoard = () => {
 
   const avlPos = () => {
     let ct = 0;
-    for (let i = 0; i < positions.length; i++) {
+    for (let i = 0; i < positions.length; i += 1) {
       if (positions[i] === '_') {
-        ct++;
+        ct += 1;
       }
     }
     return ct;
@@ -109,60 +107,64 @@ const Game = (p1, p2) => {
   };
 };
 
-function simulateInConsole() {
-  const player1 = Player();
-  const player2 = Player();
-  const game = Game(player1, player2);
-  let moves = 0;
+export {
+  Player, Game, GameBoard,
+};
 
-  const pToConsole = (b) => {
-    console.log('                    |', b[0], b[1], b[2], '|');
-    console.log('                    |', b[3], b[4], b[5], '|');
-    console.log('                    |', b[6], b[7], b[8], '|');
-  };
+// function simulateInConsole() {
+//   const player1 = Player();
+//   const player2 = Player();
+//   const game = Game(player1, player2);
+//   let moves = 0;
 
-  function move(pos) {
-    console.log('>> ', game.currentTurn().name, ' Moves: ');
-    game.mark(pos);
-    pToConsole(game.board.getBoard());
-    moves++;
-    console.log('Winner: ', game.getWinner());
-    console.log('moves:', moves);
-  }
+//   const pToConsole = (b) => {
+//     console.log('                    |', b[0], b[1], b[2], '|');
+//     console.log('                    |', b[3], b[4], b[5], '|');
+//     console.log('                    |', b[6], b[7], b[8], '|');
+//   };
 
-  console.log('--------------NEW-GAME-------------');
-  console.log('P1-Name:', game.p1.name);
-  console.log('P1-Marker: ', game.p1.marker);
-  console.log('P2-Name:', game.p2.name);
-  console.log('P2-Marker: ', game.p2.marker);
-  console.log('-----------------------------------');
-  console.log('\ngameOn:', game.isOn());
+//   function move(pos) {
+//     console.log('>> ', game.currentTurn().name, ' Moves: ');
+//     game.mark(pos);
+//     pToConsole(game.board.getBoard());
+//     moves++;
+//     console.log('Winner: ', game.getWinner());
+//     console.log('moves:', moves);
+//   }
 
-
-  let validPos;
-
-  while (game.isOn()) {
-    console.log('');
-    do {
-      validPos = Math.floor(Math.random() * 10);
-      console.log('--Trying pos:', validPos, '--Available?:', game.board.posBlank(validPos));
-    } while (validPos > 8 || !game.board.posBlank(validPos));
-    move(validPos);
-  }
-
-  // move(0);
-  // move(3);
-  // move(1);
-  // move(6);
-  // move(2);
-  // move(5);
+//   console.log('--------------NEW-GAME-------------');
+//   console.log('P1-Name:', game.p1.name);
+//   console.log('P1-Marker: ', game.p1.marker);
+//   console.log('P2-Name:', game.p2.name);
+//   console.log('P2-Marker: ', game.p2.marker);
+//   console.log('-----------------------------------');
+//   console.log('\ngameOn:', game.isOn());
 
 
-  console.log('gameOn:', game.isOn());
-  console.log('Winner: ', game.getWinner());
+//   let validPos;
+
+//   while (game.isOn()) {
+//     console.log('');
+//     do {
+//       validPos = Math.floor(Math.random() * 10);
+//       console.log('--Trying pos:', validPos, '--Available?:', game.board.posBlank(validPos));
+//     } while (validPos > 8 || !game.board.posBlank(validPos));
+//     move(validPos);
+//   }
+
+//   // move(0);
+//   // move(3);
+//   // move(1);
+//   // move(6);
+//   // move(2);
+//   // move(5);
 
 
-  console.log('-----------------------------------');
-}
+//   console.log('gameOn:', game.isOn());
+//   console.log('Winner: ', game.getWinner());
 
-simulateInConsole();
+
+//   console.log('-----------------------------------');
+// }
+
+// simulateInConsole();
