@@ -1,14 +1,33 @@
 
 body {
-  /*background: url("https://picsum.photos/seed/picsum/800/800") 50% 100% no-repeat;*/
-  background-color: lightblue;
+	/* background-image: url("https://picsum.photos/1000/800.jpg?grayscale&blur=4");
+	background-size: 100% 120%; */
+}
+main {
+	height: 100%;
 }
 
-.cell-size {
-	width: 8rem;
-	height: 8rem;
+.board-container{
+	height: 80%;
 }
 
-.board-width {
-	width: 35%;
+h1{
+	text-align: center;
 }
+
+.board{
+	border: 1px solid black;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.player-section{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 60%;
+	margin: 0 auto;
+}
+

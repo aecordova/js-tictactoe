@@ -1,46 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Tic Tac Toe</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
-<body>
-	<div class="container">
-		<div class="text-center mt-5">
-			<h1>Tic Tac Toe</h1>
-			<button class="btn btn-primary">New Game</button>
-		</div>
-
-		<div class="row">
-			<div class="mx-auto mt-5">
-				<div class="d-flex">
-					<div class="border border-dark cell-size">1</div>
-					<div class="border border-dark cell-size">2</div>
-					<div class="border border-dark cell-size">3</div>
+  <head>
+    <title>Tic Tac Toe</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
+  <body class="bg-light">
+		<main class="main">
+			<h1>TIC TAC TOE</h1>
+			<div class = "board-container" >
+				<div class="board">
+					<div>1</div>
+					<div>2</div>
+					<div>3</div>
+					<div>4</div>
+					<div>5</div>
+					<div>6</div>
+					<div>7</div>
+					<div>8</div>
+					<div>9</div>
 				</div>
-				<div class="d-flex">
-					<div class="border border-dark cell-size">4</div>
-					<div class="border border-dark cell-size">5</div>
-					<div class="border border-dark cell-size">6</div>
-				</div>
-				<div class="d-flex">
-					<div class="border border-dark cell-size">7</div>
-					<div class="border border-dark cell-size">8</div>
-					<div class="border border-dark cell-size">9</div>
+				<div class = "player-section">
+					<div>Player 1</div>
+					<div>Player 2</div>	
 				</div>
 			</div>
-		</div>
-		
-		<div class="row">
-			<div class="mx-auto mt-5 d-flex">
-				<div class="badge badge-info m-1">Player 1</div>
-				<div class="badge badge-info m-1">Player 2</div>
-			</div>
-		</div>
-		
-	</div>
-	
-	
-</body>
+		</main>
+  </body>
 </html>
