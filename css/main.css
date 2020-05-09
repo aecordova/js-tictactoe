@@ -3,12 +3,12 @@ h1{
 	text-align: center;
 	margin: 0;
 	padding: 15px;
-	font-size: 2em;
-	color: #313131;
+	font-size: 3rem;
+	color: #233d4d;
 }
 
 body {
-	font-family: 'Press Start 2P', cursive;
+	font-family: 'Fredoka One', cursive;
 	 background-image: url("https://picsum.photos/1000/800.jpg");
 	background-size: 100% 120%; */
 }
@@ -21,7 +21,7 @@ body {
 .main {
 	width: 50%;
 	margin: 3% auto;
-	background-color: rgba(255, 255, 255, .5);
+	background-color: rgba(254, 255, 255, .5);
 	min-width: 425px;
 	border-radius: 6px;
 }
@@ -30,23 +30,19 @@ body {
 	padding-bottom: 30px;
 }
 
-.board, .new-game{
+.board, .new-game-box{
 	display: grid;
 	width: 400px;
 	height: 400px;
 	margin: 0 auto;
-	background-color: rgba(88, 88, 88, 0.87);
+	background-color: rgba(97, 155, 138, .4);
 	text-align: center;
 	border-radius: 6px;
-	box-shadow: 0 5px 0 0 #707070;
 }
 
 .board {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 5px;
-}
-.new-game{
-	grid-template-rows: 1fr 1fr;
 }
 
 .player-section{
@@ -61,22 +57,42 @@ body {
 .player-box, .new-game-btn{
 	text-align: center;
 	line-height: 50px;
-	border-radius: 6px;
+	border-radius: 25px;
+	font-size: 1.5em;
 	width:70%;
 	margin: 0 auto;
 	border: none;
 	outline: none;
 	color: #313131;
-	background-color: rgba(114, 219, 16, 0.966);
+	background-color: rgba(58, 134, 255, 0.966);
 	box-shadow: 0 5px 0 0 #707070;
 	padding: 0 15px;
 }
-.new-game-btn {
-	padding: 15px;
+
+.new-game-btn-container{
+	display: grid;
+	align-items: center;
 }
+
+.new-game-btn {
+	width: fit-content;
+}
+
 .x {
 	background-image: url("/img/x.png");
 	background-size: cover;
+}
+
+.o {
+	background-image: url("/img/o.png");
+	background-size: cover;
+}
+
+.d-none{
+	display: none !important;
+}
+.hidden{
+	visibility: hidden;
 }
 
 
