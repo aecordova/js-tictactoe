@@ -1,25 +1,37 @@
 
+h1{
+	text-align: center;
+	margin: 0;
+	padding: 15px;
+}
+
 body {
-	/* background-image: url("https://picsum.photos/1000/800.jpg?grayscale&blur=4");
+	 background-image: url("https://picsum.photos/1000/800.jpg");
 	background-size: 100% 120%; */
 }
-main {
-	height: 100%;
-}
 
-.board-container{
-	height: 80%;
-}
-
-h1{
+.cell {
+	background-color: rgba(255, 255, 255, 0.856);
 	text-align: center;
 }
 
+.main {
+	width: 50%;
+	margin: 3% auto;
+	background-color: rgba(255, 255, 255, .5);
+}
+
+.board-container{
+	padding-bottom: 30px;
+}
+
 .board{
-	border: 1px solid black;
+	background-color: rgba(0, 0, 0, .5);
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	width: 60%;
+	grid-gap: 5px;
+	width: 400px;
+	height: 400px;
 	margin: 0 auto;
 	text-align: center;
 }
@@ -27,7 +39,18 @@ h1{
 .player-section{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	width: 60%;
+	width: 400px;
+	margin: 0 auto;
+	height: 50px;
+	padding-top: 15px;
+}
+
+.player-box{
+	background-color: rgba(114, 219, 16, 0.76);
+	text-align: center;
+	line-height: 50px;
+	border-radius: 25px;
+	width: 95%;
 	margin: 0 auto;
 }
 
