@@ -5,16 +5,8 @@ const newGameBtn = document.getElementById('new-game-btn');
 const newGameBox = document.getElementById('new-game-box');
 const playerBox = document.getElementById('player-box');
 const board = document.getElementById('board');
-const box0 = document.getElementById('box-0');
-const box1 = document.getElementById('box-1');
-const box2 = document.getElementById('box-2');
-const box3 = document.getElementById('box-3');
-const box4 = document.getElementById('box-4');
-const box5 = document.getElementById('box-5');
-const box6 = document.getElementById('box-6');
-const box7 = document.getElementById('box-7');
-const box8 = document.getElementById('box-8');
 const cells = document.querySelectorAll('.board-cell')
+const players = document.querySelectorAll('.player-badge')
 let game;
 const player1 = gameLogic.Player();
 const player2 = gameLogic.Player();
@@ -28,7 +20,13 @@ newGameBtn.addEventListener('click', () => {
 
 cells.forEach((cell, i) => {
   cell.addEventListener('click', (e) => {
-    cell.classList.add(`${game.mark(i)}`);  
+    if (game.isOn()){
+      cell.classList.add(`${game.mark(i)}`);
+
+      players.forEach((player) => {
+        player.classList.toggle('highlight');
+      });
+    }
   });
 });
 
