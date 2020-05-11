@@ -19,10 +19,11 @@ const GameBoard = () => {
   const posBlank = (index) => positions[index] === '_';
 
   const setPos = (index, marker) => {
-    if (posBlank) {
+    if (posBlank(index)) {
       positions[index] = marker;
+      return true;
     }
-    return posBlank;
+    return posBlank(index);
   };
 
   const winnerMove = () => {
@@ -88,7 +89,8 @@ const Game = (p1, p2) => {
   };
 
   const mark = (pos) => {
-    if (board.setPos(pos, turn.marker)) {
+    const marker = turn.marker;
+    if (board.setPos(pos, marker)) {
       if (board.winnerMove()) {
         winner = turn.name;
         terminate();
@@ -98,6 +100,7 @@ const Game = (p1, p2) => {
         terminate();
       }
       switchTurns();
+      return marker.toLowerCase();
     }
   };
 
