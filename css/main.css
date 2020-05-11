@@ -96,4 +96,20 @@ body {
 	visibility: hidden;
 }
 
+.replay-game-box {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+	background-color: rgba(0, 0, 0, .4);
+	text-align: center;
+	border-radius: 6px;
+	align-items: center;
+}
+
+.game-result {
+	
+}
+
 
