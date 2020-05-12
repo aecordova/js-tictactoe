@@ -7,53 +7,75 @@ const replayGameBtn = document.getElementById('replay-game-btn');
 const winnerBanner = document.querySelector('.winner-banner');
 const playerBox = document.getElementById('player-box');
 const board = document.getElementById('board');
-const cells = document.querySelectorAll('.board-cell')
-const players = document.querySelectorAll('.player-badge')
+const cells = document.querySelectorAll('.board-cell');
+const p1Badge = document.getElementById('p1-badge');
+const p2Badge = document.getElementById('p2-badge');
+const resetBtn = document.getElementById('reset-btn')
+// const players = document.querySelectorAll('.player-badge');
+
 let game;
 const player1 = gameLogic.Player();
 const player2 = gameLogic.Player();
 
-newGameBtn.addEventListener('click', () => {
+const gameInit = () => {
   game = gameLogic.Game(player1, player2);
-  newGameBox.classList.toggle('d-none');
-  board.classList.toggle('d-none');
-  playerBox.classList.toggle('hidden');
   clearBoard();
-});
+  showActivePlayer();
+};
 
-replayGameBtn.addEventListener('click', () => {
-  game = gameLogic.Game(player1, player2);
-  winnerBanner.classList.add('d-none');
-  //players[0].classList.add('highlight');
-  clearBoard();
-});
-
-cells.forEach((cell, i) => {
-  cell.addEventListener('click', (e) => {
-    if (game.isOn()){
-      cell.classList.add(`${game.mark(i)}`);
-      players.forEach((player) => {
-        player.classList.toggle('highlight');
-      });
-    }
-  });
-});
+const showActivePlayer = () => {
+  if (game.currentTurn() === player1) {
+    p1Badge.classList.add('active');
+    p2Badge.classList.remove('active');
+  }
+  if (game.currentTurn() === player2) {
+    p2Badge.classList.add('active');
+    p1Badge.classList.remove('active');
+  }
+};
 
 const clearBoard = () => {
   cells.forEach((cell) => {
-    
-    if (cell.classList.value.includes('x')){
+    if (cell.classList.value.includes('x')) {
       cell.classList.remove('x');
     }
-    if (cell.classList.value.includes('o')){
+    if (cell.classList.value.includes('o')) {
       cell.classList.remove('o');
     }
-    // players.forEach((player) => {
-    //   player.classList.remove('highlight');
-    // });
-
+    game.board.clearBoard();
   });
-}
+};
+
+const showWinner = () => {
+
+};
 
 
+newGameBtn.addEventListener('click', () => {
+  gameInit();
+  newGameBox.classList.toggle('d-none');
+  board.classList.toggle('d-none');
+  playerBox.classList.toggle('hidden');
+});
 
+replayGameBtn.addEventListener('click', () => {
+  gameInit();
+  winnerBanner.classList.add('d-none');
+});
+
+resetBtn.addEventListener('click', () => {
+  gameInit();
+});
+
+cells.forEach((cell, i) => {
+  cell.addEventListener('click', () => {
+    if (game.isOn()) {
+      cell.classList.add(`${game.mark(i)}`);
+      if (game.isOn()) {
+        showActivePlayer();
+      } else {
+        showWinner();
+      }
+    }
+  });
+});
