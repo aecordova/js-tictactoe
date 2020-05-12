@@ -12,12 +12,10 @@ const p1Badge = document.getElementById('p1-badge');
 const p2Badge = document.getElementById('p2-badge');
 const resetBtn = document.getElementById('reset-btn');
 const gameResult = document.querySelector('.game-result');
-// const players = document.querySelectorAll('.player-badge');
 
 let game;
 const player1 = gameLogic.Player();
 const player2 = gameLogic.Player();
-
 
 
 const showActivePlayer = () => {
@@ -52,7 +50,7 @@ const gameInit = () => {
 const showWinner = () => {
   board.classList.toggle('d-none');
   winnerBanner.classList.toggle('d-none');
-  if (game.getWinner() == 'Draw') {
+  if (game.getWinner() === 'Draw') {
     gameResult.innerHTML = `It's a ${game.getWinner()} !`;
   } else {
     gameResult.innerHTML = `${game.getWinner()} WINS!`;
@@ -90,16 +88,18 @@ cells.forEach((cell, i) => {
 });
 
 p1Badge.addEventListener('click', () => {
-  const player1Name = prompt("Enter your name: ");
-  if (player1Name !== "") {
+  // eslint-disable-next-line no-alert
+  const player1Name = prompt('Enter your name: ');
+  if (player1Name !== '') {
     player1.name = player1Name;
     p1Badge.textContent = player1.name;
   }
 });
 
 p2Badge.addEventListener('click', () => {
-  const player2Name = prompt("Enter your name: ");
-  if (player2Name !== "") {
+  // eslint-disable-next-line no-alert
+  const player2Name = prompt('Enter your name: ');
+  if (player2Name !== '') {
     player2.name = player2Name;
     p2Badge.textContent = player2.name;
   }

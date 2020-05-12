@@ -88,8 +88,9 @@ const Game = (p1, p2) => {
     }
   };
 
+  // eslint-disable-next-line consistent-return
   const mark = (pos) => {
-    const marker = turn.marker;
+    const { marker } = turn;
     if (board.setPos(pos, marker)) {
       if (board.winnerMove()) {
         winner = turn.name;
@@ -113,58 +114,3 @@ const Game = (p1, p2) => {
 export {
   Player, Game, GameBoard,
 };
-
-
-/* Comment out the "export" block above and uncomment the following linesand run
- this file from the terminal to simulate in the console: (e.g. node ./js/game_logic.js) */
-
-/*
-function simulateInConsole() {
-  const player1 = Player();
-  const player2 = Player();
-  const game = Game(player1, player2);
-  let moves = 0;
-
-  const pToConsole = (b) => {
-    console.log('                    |', b[0], b[1], b[2], '|');
-    console.log('                    |', b[3], b[4], b[5], '|');
-    console.log('                    |', b[6], b[7], b[8], '|');
-  };
-
-  function move(pos) {
-    console.log('>> ', game.currentTurn().name, ' Moves: ');
-    game.mark(pos);
-    pToConsole(game.board.getBoard());
-    moves++;
-    console.log('Winner: ', game.getWinner());
-    console.log('moves:', moves);
-  }
-
-  console.log('--------------NEW-GAME-------------');
-  console.log('P1-Name:', game.p1.name);
-  console.log('P1-Marker: ', game.p1.marker);
-  console.log('P2-Name:', game.p2.name);
-  console.log('P2-Marker: ', game.p2.marker);
-  console.log('-----------------------------------');
-  console.log('\ngameOn:', game.isOn());
-
-
-  let validPos;
-
-  while (game.isOn()) {
-    console.log('');
-    do {
-      validPos = Math.floor(Math.random() * 10);
-      console.log('--Trying pos:', validPos, '--Available?:', game.board.posBlank(validPos));
-    } while (validPos > 8 || !game.board.posBlank(validPos));
-    move(validPos);
-  }
-
-  console.log('gameOn:', game.isOn());
-  console.log('Winner: ', game.getWinner());
-
-
-  console.log('-----------------------------------');
-}
-
-simulateInConsole(); */
