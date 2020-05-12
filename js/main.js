@@ -52,9 +52,12 @@ const gameInit = () => {
 const showWinner = () => {
   board.classList.toggle('d-none');
   winnerBanner.classList.toggle('d-none');
-  gameResult.innerHTML = game.getWinner();
+  if (game.getWinner() == 'Draw') {
+    gameResult.innerHTML = `It's a ${game.getWinner()} !`;
+  } else {
+    gameResult.innerHTML = `${game.getWinner()} WINS!`;
+  }
 };
-
 
 newGameBtn.addEventListener('click', () => {
   gameInit();

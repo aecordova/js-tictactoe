@@ -158,5 +158,8 @@ box-shadow: inset 8.3px 8.3px 17px 1px rgba(0,0,0,0.5);
 	align-items: center;
 }
 
+.game-result {
+	font-size: 2rem;
+}
 
 
