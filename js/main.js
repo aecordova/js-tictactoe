@@ -10,18 +10,14 @@ const board = document.getElementById('board');
 const cells = document.querySelectorAll('.board-cell');
 const p1Badge = document.getElementById('p1-badge');
 const p2Badge = document.getElementById('p2-badge');
-const resetBtn = document.getElementById('reset-btn')
+const resetBtn = document.getElementById('reset-btn');
 // const players = document.querySelectorAll('.player-badge');
 
 let game;
 const player1 = gameLogic.Player();
 const player2 = gameLogic.Player();
 
-const gameInit = () => {
-  game = gameLogic.Game(player1, player2);
-  clearBoard();
-  showActivePlayer();
-};
+
 
 const showActivePlayer = () => {
   if (game.currentTurn() === player1) {
@@ -44,6 +40,12 @@ const clearBoard = () => {
     }
     game.board.clearBoard();
   });
+};
+
+const gameInit = () => {
+  game = gameLogic.Game(player1, player2);
+  clearBoard();
+  showActivePlayer();
 };
 
 const showWinner = () => {
