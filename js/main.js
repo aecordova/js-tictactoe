@@ -11,6 +11,7 @@ const cells = document.querySelectorAll('.board-cell');
 const p1Badge = document.getElementById('p1-badge');
 const p2Badge = document.getElementById('p2-badge');
 const resetBtn = document.getElementById('reset-btn');
+const gameResult = document.querySelector('.game-result');
 // const players = document.querySelectorAll('.player-badge');
 
 let game;
@@ -49,7 +50,9 @@ const gameInit = () => {
 };
 
 const showWinner = () => {
-
+  board.classList.toggle('d-none');
+  winnerBanner.classList.toggle('d-none');
+  gameResult.innerHTML = game.getWinner();
 };
 
 
@@ -62,7 +65,8 @@ newGameBtn.addEventListener('click', () => {
 
 replayGameBtn.addEventListener('click', () => {
   gameInit();
-  winnerBanner.classList.add('d-none');
+  board.classList.toggle('d-none');
+  winnerBanner.classList.toggle('d-none');
 });
 
 resetBtn.addEventListener('click', () => {
