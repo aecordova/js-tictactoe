@@ -85,3 +85,15 @@ cells.forEach((cell, i) => {
     }
   });
 });
+
+p1Badge.addEventListener('click', () => {
+  const player1Name = prompt("Enter your name: ");
+  player1.name = player1Name;
+  p1Badge.textContent = player1.name;
+});
+
+p2Badge.addEventListener('click', () => {
+  const player2Name = prompt("Enter your name: ");
+  player2.name = player2Name;
+  p2Badge.textContent = player2.name;
+});
