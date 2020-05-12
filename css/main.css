@@ -10,12 +10,12 @@ h1{
 body {
 	font-family: 'Fredoka One', cursive;
 	 background-image: url("https://picsum.photos/1000/800.jpg");
-	background-size: 100% 120%;
+	background-size: cover;
 }
 
 .main {
 	width: 50%;
-	margin: 25px auto;
+	margin: 8rem auto;
 	background-color: rgba(254, 255, 255, .5);
 	min-width: 425px;
 	border-radius: 6px;
