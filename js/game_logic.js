@@ -135,8 +135,10 @@ const Game = (p1, p2) => {
   };
 };
 
-export {
-  Player,
-  Game,
-  GameBoard,
-};
+// export {
+  // Player,
+  // Game,
+  // GameBoard,
+// };
+
+module.exports = { Player, Game, GameBoard }
