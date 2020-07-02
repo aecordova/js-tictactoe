@@ -5,6 +5,8 @@ const gameLogic = require('../js/game_logic.js');
 
 const player1 = gameLogic.Player('PlayerOne', 'X');
 
+const gameBoard = gameLogic.GameBoard();
+
 describe('It shoud create Players with names, markers and scores', () => {
   test('It should return an object', () => {
     expect(typeof player1).toBe('object');
@@ -21,5 +23,34 @@ describe('It shoud create Players with names, markers and scores', () => {
   });
   test('It should be able to get the marker of the player', () => {
     expect(player1.marker).toBe('X');
+  });
+});
+
+describe('It shoud create a blank board', () => {
+  test('It should return an object', () => {
+    expect(typeof gameBoard).toBe('object');
+  });
+  test('It should start with blank positions', () => {
+    expect(gameBoard.getBoard()).toStrictEqual(['_', '_', '_', '_', '_', '_', '_', '_', '_']);
+  });
+  test('It should be able to check if a position is blank', () => {
+    expect(gameBoard.posBlank(0)).toBe(true);
+  });
+  test('It should be able set a position', () => {
+    gameBoard.setPos(1, 'X')
+    expect(gameBoard.posBlank(1)).toBe(false);
+  });
+  test('It should be able get available positions', () => {
+    expect(gameBoard.avlPos()).toBe(8);
+  });
+  test('It should be able to clear the board', () => {
+    gameBoard.clearBoard();
+    expect(gameBoard.avlPos()).toBe(9);
+  });
+  test('It should be able to check if the last move was the winner', () => {
+    gameBoard.setPos(1, 'X');
+    gameBoard.setPos(4, 'X');
+    gameBoard.setPos(7, 'X');
+    expect(gameBoard.winnerMove()).toBe(true);
   });
 });
