@@ -40,7 +40,7 @@ describe('It shoud create a blank board', () => {
     expect(gameBoard.posBlank(0)).toBe(true);
   });
   test('It should be able set a position', () => {
-    gameBoard.setPos(1, 'X')
+    gameBoard.setPos(1, 'X');
     expect(gameBoard.posBlank(1)).toBe(false);
   });
   test('It should be able get available positions', () => {
@@ -78,7 +78,7 @@ describe('It shoud create a new game', () => {
     game.mark(4);
     game.mark(3);
     game.mark(7);
-    expect(game.getWinner()).toBe("PlayerTwo");
+    expect(game.getWinner()).toBe('PlayerTwo');
   });
   test('It should turn the game off once there is a winner', () => {
     expect(game.isOn()).toBe(false);

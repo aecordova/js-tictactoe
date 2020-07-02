@@ -37,7 +37,7 @@ const GameBoard = () => {
       [1, 4, 7],
       [2, 5, 8],
       [2, 4, 6],
-      [0, 4, 8]
+      [0, 4, 8],
     ];
     const lines = winCombos.map((line) => line.map((pos) => positions[pos]).join(''));
     return lines.indexOf('XXX') > -1 || lines.indexOf('OOO') > -1;
@@ -135,4 +135,4 @@ const Game = (p1, p2) => {
   };
 };
 
-module.exports = { Player, Game, GameBoard }
+module.exports = { Player, Game, GameBoard };
