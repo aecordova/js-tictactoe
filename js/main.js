@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/extensions
-import * as gameLogic from './game_logic.js';
+// import * as gameLogic from './game_logic.js';
+const gameLogic = require('./game_logic.js');
 
 const newGameBtn = document.getElementById('new-game-btn');
 const newGameBox = document.getElementById('new-game-box');

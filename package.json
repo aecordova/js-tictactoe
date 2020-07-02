@@ -1,0 +1,27 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "> This is a DOM Tic Tac Toe app where users can play the classic [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe) game.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest",
+    "test-w": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aecordova/js-tictactoe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aecordova/js-tictactoe/issues"
+  },
+  "homepage": "https://github.com/aecordova/js-tictactoe#readme",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
+}

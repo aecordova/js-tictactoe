@@ -1,4 +1,3 @@
-
 const Player = (name = '', marker = '_') => {
   let score = 0;
   const getScore = () => score;
@@ -7,7 +6,10 @@ const Player = (name = '', marker = '_') => {
   };
 
   return {
-    name, marker, getScore, setScore,
+    name,
+    marker,
+    getScore,
+    setScore,
   };
 };
 
@@ -27,8 +29,16 @@ const GameBoard = () => {
   };
 
   const winnerMove = () => {
-    const winCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6],
-      [1, 4, 7], [2, 5, 8], [2, 4, 6], [0, 4, 8]];
+    const winCombos = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [2, 4, 6],
+      [0, 4, 8],
+    ];
     const lines = winCombos.map((line) => line.map((pos) => positions[pos]).join(''));
     return lines.indexOf('XXX') > -1 || lines.indexOf('OOO') > -1;
   };
@@ -48,7 +58,12 @@ const GameBoard = () => {
   };
 
   return {
-    setPos, clearBoard, getBoard, posBlank, winnerMove, avlPos,
+    setPos,
+    clearBoard,
+    getBoard,
+    posBlank,
+    winnerMove,
+    avlPos,
   };
 };
 
@@ -78,7 +93,9 @@ const Game = (p1, p2) => {
   const currentTurn = () => turn;
   const isOn = () => gameOn;
   const getWinner = () => winner;
-  const terminate = () => { gameOn = false; };
+  const terminate = () => {
+    gameOn = false;
+  };
 
   const switchTurns = () => {
     if (turn === p1) {
@@ -90,7 +107,9 @@ const Game = (p1, p2) => {
 
   // eslint-disable-next-line consistent-return
   const mark = (pos) => {
-    const { marker } = turn;
+    const {
+      marker,
+    } = turn;
     if (board.setPos(pos, marker)) {
       if (board.winnerMove()) {
         winner = turn.name;
@@ -105,12 +124,15 @@ const Game = (p1, p2) => {
     }
   };
 
-
   return {
-    currentTurn, board, mark, p1, p2, isOn, getWinner,
+    currentTurn,
+    board,
+    mark,
+    p1,
+    p2,
+    isOn,
+    getWinner,
   };
 };
 
-export {
-  Player, Game, GameBoard,
-};
+module.exports = { Player, Game, GameBoard };
