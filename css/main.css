@@ -51,8 +51,8 @@ body {
 .board-cell {
 	background-color: rgba(255, 255, 255, 0.856);
 	text-align: center;
-
-box-shadow: inset 8.3px 8.3px 17px 1px rgba(0,0,0,0.5);
+  box-shadow: inset 8.3px 8.3px 17px 1px rgba(0,0,0,0.5);
+  transition: box-shadow 1s ease;
 }
 
 .board-cell:hover{
@@ -97,6 +97,7 @@ box-shadow: inset 8.3px 8.3px 17px 1px rgba(0,0,0,0.5);
 .reset:hover i{
 	box-shadow: 0px 0px 25px 14px rgba(230,118,21,1);
 	color: rgba(255, 255, 255, 0.9);
+  transition: box-shadow .5s ease;
 }
 
 .p2 {
@@ -105,29 +106,35 @@ box-shadow: inset 8.3px 8.3px 17px 1px rgba(0,0,0,0.5);
 
 .new-game-btn:hover{
 	box-shadow: 0px 0px 25px 14px rgba(230,118,21,1);
+  transition: box-shadow .5s ease;
 }
 
 .active{
 	box-shadow: 0px 0px 25px 14px rgba(230,118,21,1);
+  transition: box-shadow .5s ease;
 }
 
 .x {
 	background-image: url("/img/x_s.png");
 	background-size: cover;
+  transition: background-image .5s ;
 }
 
 .x:hover {
 	background-image: url("/img/x.png");
 	background-size: cover;
+  transition: background-image .5s ;
 }
 
 .o {
 	background-image: url("/img/o_s.png");
 	background-size: cover;
+  transition: background-image .5s ease;
 }
 .o:hover {
 	background-image: url("/img/o.png");
 	background-size: cover;
+  transition: background-image .5s ease;
 }
 
 .d-none{
